@@ -33,6 +33,7 @@ export default function Controller({ list, setList }) {
     for (let i in items) {
       elems.push(
         <Button
+          auto
           flat={active == i}
           bordered={active != i}
           size="sm"
@@ -46,7 +47,7 @@ export default function Controller({ list, setList }) {
       );
     }
     return (
-      <div style={{ display: 'flex', gap: '0.45rem', flexDirection: 'row' }}>
+      <div className='tabs'>
         {elems}
       </div>
     );
@@ -68,7 +69,7 @@ export default function Controller({ list, setList }) {
           }} />
           <Text b size={18}>{tmpList[i].title}</Text>
           </div>
-          <Button color={'error'} onPress={(e)=>{
+          <Button  color={'error'} onPress={(e)=>{
             deleteTask(i);
           }} flat style={{minHeight:'1rem',minWidth:'1rem',height:'2rem',width:'2rem',padding:'0.4rem'}}>
               <DeleteOutlined />
@@ -103,11 +104,7 @@ export default function Controller({ list, setList }) {
       <Tabs />
       <br />
       <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(5,1fr)',
-          gap: '0.8rem',
-        }}
+        className='taskList'
       >
         <TaskList />
       </div>

@@ -37,10 +37,35 @@ button {
   padding: 0.5rem 1rem;
 }
 
+.taskList{
+  display: grid;
+  grid-template-columns: repeat(1,1fr);
+  gap: '0.8rem';
+}
+.tabs{
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(3,1fr);
+  column-gap: 1em;
+}
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: auto;
+}
+
 @media screen and (min-width: 768px) {
   .container {
     max-width: 800px;
+
     margin: 0 auto;
+  }
+  .header{
+    display: flex;
+    justify-content: unset;
+    gap:1rem
   }
 
   form {
@@ -55,4 +80,17 @@ button {
   input {
     margin-right: 1rem;
   }
+  .taskList{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: '0.8rem';
+  }
+
+.tabs{
+  display: flex; 
+  gap: '0.45rem';
+  flex-direction: row;
 }
+  
+}
+

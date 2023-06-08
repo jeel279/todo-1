@@ -32,8 +32,7 @@ export default function AddTask({setList}){
     setOpen(false);
   };
   return (<>
-    <Button onPress={()=>setOpen(true)}>Add Task</Button>
-    <br />
+    <Button size={'sm'} onPress={()=>setOpen(true)}>Add Task</Button>
     <Modal blur open={open} onClose={()=>{setOpen(false)}} closeButton>
         <Modal.Header>
             <Text b size={18}>Add New Task</Text>

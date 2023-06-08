@@ -4,6 +4,7 @@ import './App.css';
 
 import Controller from './Controller.js';
 import AddTask from './addTask';
+import { Text } from '@nextui-org/react';
 export default function App() {
   const [tasks, setTasks] = useState(JSON.parse(localStorage.getItem('tasks')==null ? "[]" : localStorage.getItem('tasks')));
   
@@ -17,10 +18,14 @@ export default function App() {
   }, [tasks]);
 
   return (
-    <div style={{ width: '100vw', height: '100%', padding: '1.2rem' }}>
-      <h2>Todo List</h2>
-      <AddTask setList={setTasks} />
+    <div style={{padding: '1.2rem' }}>
+      <div className='header'>
 
+        <Text b size={25}>Todo List</Text>
+        <AddTask setList={setTasks} />
+      </div>
+
+      <br/>
 
 
       <Controller list={tasks} setList={setTasks} />
